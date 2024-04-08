@@ -9,6 +9,11 @@ pipeline {
         AWS_SECRET_ACCESS_KEY = credentials('secretkey')
         AWS_REGION = "us-east-1"
     }
+
+     // This option 'ansiColor' fixes the output log for Terraform in the Console Output of a build. It allows colors and escape chars.
+    options {
+        ansiColor('xterm')
+    }
     
     stages {
         stage('Initialize') {
